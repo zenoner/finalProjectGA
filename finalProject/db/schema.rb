@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160826190840) do
+ActiveRecord::Schema.define(version: 20160921151743) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20160826190840) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "notebooks", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_notebooks_on_users_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "notebook_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["notebook_id"], name: "index_notes_on_notebook_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -27,6 +44,12 @@ ActiveRecord::Schema.define(version: 20160826190840) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
