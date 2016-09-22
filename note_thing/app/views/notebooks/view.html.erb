@@ -1,0 +1,35 @@
+<% @notebooks.each do |notebook| %>
+  Notebook Title:
+  <a class='show_notes'><b><%= notebook.title %></b></a>
+  <br><br>
+  <% notebook.notes.each do |note| %>
+  <div class="notes">
+    Note Title: <%= note.title %>
+    <br>
+    Note Body: <%= note.body %>
+    <br>
+    <%= link_to 'Destroy',  note,  method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+    <br><br>
+  <% end %>
+  <br>
+
+  <b>Add a Note to this book</b>
+  <%= form_for (@note), url: "/notes" do |f| %>
+    <input type='hidden' name='notebook_id' value='<%= notebook.id %>'>
+    <%= f.text_field :title %><br>
+    <%= f.text_area :body %><br>
+    <%= f.submit "Create" %>
+
+  <% end %>
+
+  <br><br><hr>
+<% end %>
+
+<br><br>
+
+<h1>Add a Notebook</h1>
+<%= form_for @notebook, url: {action: "create"} do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create" %>
+<% end %>
