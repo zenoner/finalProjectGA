@@ -51,4 +51,19 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  #React.js builds
+  # MyApp::Application.configure do
+  # config.react.variant = :development
+  # end
+
+  # MyApp::Application.configure do
+  # config.react.variant = :production
+  # end
+
+  # #to include add-ons
+  # MyApp::Application.configure do
+  # config.react.addons = false # defaults to false
+  # end
+
 end

@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Notes</title>
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <header>
-    <nav>
+  <nav>
       <% if user_signed_in? %>
         <strong><%= current_user.email %></strong>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %>
         <%= link_to "Sign in", new_user_session_path %>
       <% end % %>
     </nav>
   </header>
-
   </header><!-- /header -->
-  <div class="main_container">
-
-    <%= yield %>
+<h1>Welcome to noteWorthy</h1>
+<div class="main_container">
+  <div class="buttonBar">
+      <div class="addNoteButton">
+        here to add notes
+      </div>
+      <div class="addNotebookButton">
+        here to add notebooks
+      </div>
   </div>
+  <div class="notebookBar">
+    <div class="notebookSlack">
+      A notebook slack 1.
+    </div>
+    <div class="notebookSlack">
+      A notebook slack 2.
+    </div>
+    <div class="notebookSlack">
+      A notebook slack 3.
+    </div>
+  </div>
+  <div class="noteBar">
+    <div class="noteBox">
+      <div class="titleBox">
+        Title: <input type="text" name="title" value="title"><br>
+      </div>
+    </div>
+      <div class="textBox">
+        <p>this is a text box for notes</p>
+        <h2>this is a test data</h2>
+        <% @notes.each do |note| %>
+        <%= note.title %><br>
+        <%= note.body %><br><br>
+        <% end %>
+      </div>
+  </div>
+</div>
+
   </body>
 </html>

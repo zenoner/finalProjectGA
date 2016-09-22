@@ -1,4 +1,55 @@
 
+.container {
+  width: 100%;
+  border-style: dotted;
+}
+
+.buttonBar {
+  width: 10%;
+  height: 500px;
+  float: left;
+  background-color: red;
+}
+
+.addNoteButton {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.addNotebookButton {
+   width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+.notebookSlack{
+   width: 500px;
+   height: 100px;
+   background-color: yellow;
+}
+
+.notebookBar {
+  width: 40%;
+  height: 500px;
+  float: left;
+  background-color: gray;
+}
+
+.noteBar {
+  width: 50%;
+  height: 500px;
+  float: right;
+  background-color: green;
+}
+
+.noteBox {
+  margin: 10px;
+}
+
+.textBox {
+  margin: 10px;
+}
 
 *{
   border: 0;
@@ -14,8 +65,11 @@ body{
 }
 
 .main_container {
-  max-width:40em;
-  margin:auto;
+  max-width:100%;
+  margin-left:10px;
+  margin-right:10px;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .logo a{

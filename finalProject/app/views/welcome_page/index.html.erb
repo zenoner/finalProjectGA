@@ -1,14 +1,25 @@
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
+</head>
     <% if user_signed_in? %>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %>
         <%= link_to "Sign in", new_user_session_path %>
     <% end % %>
-<h1>Welcome to noteWorthy</strong></h1>
 
-<h2>this is a test data</h2>
-<% @notes.each do |note| %>
-  <%= note.title %><br>
-  <%= note.body %><br><br>
-<% end %>
+<h1>Welcome to noteWodddrthy</h1>
+<div class="main_container">
+
+  <h2>this is a test data</h2>
+  <% @notes.each do |note| %>
+    <%= note.title %><br>
+    <%= note.body %><br><br>
+  <% end %>
+
+
+</div>
+
+
