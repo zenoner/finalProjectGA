@@ -49,6 +49,8 @@
 
 .textBox {
   margin: 10px;
+  height: auto;
+  background-color: red;
 }
 
 *{

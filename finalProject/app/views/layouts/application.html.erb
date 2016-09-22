@@ -24,14 +24,21 @@
   <div class="buttonBar">
       <div class="addNoteButton">
         here to add notes
+        <button type="button" onclick="alert('Hello world!')">Click Me!</button>
       </div>
       <div class="addNotebookButton">
         here to add notebooks
+        <button type="button" onclick="alert('Hello world!')">Click Me!</button>
       </div>
   </div>
   <div class="notebookBar">
+    <input type="text" name="title" value="notebook">
     <div class="notebookSlack">
-      A notebook slack 1.
+      A notebook slack 1.(from notebook db model)
+      <br>
+      <% @notebooks.each do |notebook| %>
+        <%= notebook.title %><br>
+      <% end %>
     </div>
     <div class="notebookSlack">
       A notebook slack 2.
@@ -48,7 +55,7 @@
     </div>
       <div class="textBox">
         <p>this is a text box for notes</p>
-        <h2>this is a test data</h2>
+        <h2>this is a test data from note db model</h2>
         <% @notes.each do |note| %>
         <%= note.title %><br>
         <%= note.body %><br><br>
