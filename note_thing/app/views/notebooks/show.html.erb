@@ -1,0 +1,23 @@
+<%= @notebook.title %>
+<br>
+<strong><%= @notebook.user_id %></strong>
+<hr>
+<% @users.each do |user| %>
+  <%= user.email %> and ID : <%= user.id %>
+  <br>
+<% end %>
+
+
+
+<h2>List of notebook ID, note title and body</h2>
+<% @notes.each do |note| %>
+  The note on the notebook_id: <%= note.notebook_id %>
+  <br>
+  The notebook title: <%= note.title %>
+  <br>
+  The note title: <%= note.title %>
+  <br>
+  The note body: <%= note.body %>
+  <hr>
+  <br><br>
+<% end %>

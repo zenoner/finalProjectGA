@@ -17,12 +17,13 @@
 
 $(function() {
   $('.notes').hide()
-    console.log( "ready!" );
+    console.log( "ready!!" );
 
     $('.show_notes').click(function(){
       $(this).next().next().next().toggle()
     })
 
+    //show and hide pretty easy, just needs to be styled for it to look pretty
 
 
 });
