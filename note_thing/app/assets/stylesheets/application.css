@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  border-style: dotted;
+  margin-top:-10px;
+}
+
+#inputBox {
+  text-align: center;
+}

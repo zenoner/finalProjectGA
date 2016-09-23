@@ -1,3 +1,15 @@
+
+<h1>Welcome to noteWorthy</h1>
+<div class="container">
+  <div id="inputBox">
+    <h3>Add a Notebook</h3>
+    <%= form_for @notebook, url: {action: "create"} do |f| %>
+      <%= f.text_field :title %>
+      <%= f.submit "Create" %>
+    <% end %>
+  </div>
+</div>
+
 <% @notebooks.each do |notebook| %>
   Notebook Title:
   <a class='show_notes'><b><%= notebook.title %></b></a>
@@ -26,10 +38,10 @@
   <br><br><hr>
 <% end %>
 
-<br><br>
+<!-- <br><br>
 
 <h1>Add a Notebook</h1>
 <%= form_for @notebook, url: {action: "create"} do |f| %>
   <%= f.text_field :title %>
   <%= f.submit "Create" %>
-<% end %>
+<% end %> -->
