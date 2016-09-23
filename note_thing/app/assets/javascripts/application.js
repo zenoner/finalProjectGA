@@ -25,6 +25,6 @@ $(function() {
     });
 
     //show and hide pretty easy, just needs to be styled for it to look pretty
-
-
 });
+
+

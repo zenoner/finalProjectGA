@@ -24,4 +24,5 @@ class NotebooksController < ApplicationController
     @notebook.save
     redirect_to :back
   end
+
 end
