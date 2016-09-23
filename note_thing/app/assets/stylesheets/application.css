@@ -22,6 +22,19 @@ nav {
   text-align: right;
 }
 
+.notebookTitles {
+  border-style: solid;
+}
+
+.notes {
+  border-style: dotted;
+}
+
+.addNotes {
+  background-color: gray;
+
+}
+
 .container {
   border-style: dotted;
   margin-top:-10px;
