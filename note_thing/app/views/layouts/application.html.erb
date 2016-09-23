@@ -9,9 +9,8 @@
   </head>
 
   <body>
-
-      <header>
-  <nav>
+  <header>
+    <nav>
       <% if user_signed_in? %>
         <strong><%= current_user.email %></strong>
         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

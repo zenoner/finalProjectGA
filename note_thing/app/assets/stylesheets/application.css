@@ -18,6 +18,10 @@ h1 {
   text-align: center;
 }
 
+nav {
+  text-align: right;
+}
+
 .container {
   border-style: dotted;
   margin-top:-10px;

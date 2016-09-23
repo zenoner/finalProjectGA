@@ -1,12 +1,18 @@
 
 <h1>Welcome to noteWorthy</h1>
-<div class="container">
-  <div id="inputBox">
-    <h3>Add a Notebook</h3>
+<div class="container" >
+  <div id="inputBox" class="card-panel #90caf9 blue lighten-3">
+    <h4>Add a Notebook</h4>
     <%= form_for @notebook, url: {action: "create"} do |f| %>
       <%= f.text_field :title %>
       <%= f.submit "Create" %>
     <% end %>
+  </div>
+  <div class="row">
+    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
   </div>
 </div>
 
@@ -23,7 +29,7 @@
     <%= link_to 'Destroy',  note,  method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
     <br><br>
-  <% end %>
+<% end %>
   <br>
 
   <b>Add a Note to this book</b>
