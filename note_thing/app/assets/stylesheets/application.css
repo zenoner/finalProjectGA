@@ -24,6 +24,9 @@ nav {
 
 .notebookTitles {
   border-style: solid;
+  width: 500px;
+  margin-left: 10px;
+  display: block;
 }
 
 .notes {
@@ -32,6 +35,25 @@ nav {
 
 .addNotes {
   background-color: gray;
+  width: 500px;
+  margin-left: 10px;
+}
+
+.longone {
+  display: inline-block;
+  flex-direction: row;
+  border-style: dotted;
+  text-align: center;
+}
+
+.ingbox {
+  background: red;
+  border-radius: 2%;
+  display: inline-block;
+  height: 100px;
+  margin: auto 5px;
+  width: 200px;
+  flex: 1 0 auto;
 
 }
 

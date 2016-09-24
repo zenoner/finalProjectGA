@@ -4,22 +4,33 @@
   <div id="inputBox">
     <h3>Add a Notebook</h3>
     <%= form_for @notebook, url: {action: "create"} do |f| %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: 'Create new notebook' %>
       <%= f.hidden_field :user_id, :value => @user %>
       <%= f.submit "Create" %>
     <% end %>
   </div>
 
-
-
- <% @notebooks.each do |notebook| %>
+<div class="row">
+  <div class="longone">
+    <div class="ingbox">
+      <h1>test</h1>
+    </div>
+    <div class="ingbox">
+      <h1>test2</h1>
+    </div>
+    <div class="ingbox">
+      <h1>test3</h1>
+    </div>
+    <div class="ingbox">
+      <h1>test4</h1>
+    </div>
+    <div class="ingbox">
+      <h1>test5</h1>
+    </div>
+  </div>
+</div>
   <div class="row">
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-    <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-  </div>
-  </div>
+   <% @notebooks.each do |notebook| %>
   <div class="notebookTitles">
     Notebook Title:
     <a class='show_notes'><b><%= notebook.title %></b></a>
@@ -34,21 +45,20 @@
       <br>
       <%= link_to 'Destroy',  note,  method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
-      <br><br>
     <% end %>
-    <br>
 </div>
 <div class="addNotes">
   <b>Add a Note to this book</b>
   <%= form_for (@note), url: "/notes" do |f| %>
     <input type='hidden' name='notebook_id' value='<%= notebook.id %>'>
-    <%= f.text_field :title %><br>
-    <%= f.text_area :body %><br>
+    <%= f.text_field :title, placeholder: 'title'  %><br>
+    <%= f.text_area :body, placeholder: 'body' %><br>
     <%= f.submit "Create" %>
     <%= link_to 'Destroy Notebook',  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' } %>
   <% end %>
 </div>
-  <br><br><hr>
+<
+<hr>
 <% end %>
 
 
