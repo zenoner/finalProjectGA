@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+
 $(function() {
   $('.notes').hide()
     console.log( "ready!!" );

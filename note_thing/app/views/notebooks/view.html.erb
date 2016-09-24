@@ -1,6 +1,3 @@
-
-
-
 <h1>Welcome to noteWorthy</h1>
 <div class="container" class="card-panel teal lighten-1">
   <div id="inputBox">
@@ -13,80 +10,37 @@
   </div>
 
 <div class="row">
-  <div class="longone">
-    <div class="ingbox">
-    <h6>Notebook Title</h6>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes1</i></div>
-          <div class="collapsible-body">
-            <p>this is a body part for notes</p>
-             <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-            <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+  <div class="col s12">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"> Notebook Titles </div>
+        <div class="collapsible-body">
+          <div class="row">
+            <div class="col s12 m12">
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header">Note Title 1</div>
+                  <div class="collapsible-body">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Note Title 2</div>
+                  <div class="collapsible-body">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes2</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-      </ul>
-    </div>
-    <div class="ingbox">
-    <h6>Notebook Title</h6>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes1</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes2</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-      </ul>
-    </div>
-    <div class="ingbox">
-    <h6>Notebook Title</h6>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes1</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes2</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-      </ul>
-    </div>
-    <div class="ingbox">
-    <h6>Notebook Title</h6>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes1</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes2</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-      </ul>
-    </div>
-    <div class="ingbox">
-    <h6>Notebook Title</h6>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes1</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">Notes2</i></div>
-          <div class="collapsible-body"><p>this is a body part for notes</p></div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
+
   <div class="row">
-   <% @notebooks.each do |notebook| %>
+<% @notebooks.each do |notebook| %>
   <div class="notebookTitles">
     Notebook Title:
     <a class='show_notes'><b><%= notebook.title %></b></a>
@@ -113,7 +67,7 @@
     <%= link_to 'Destroy Notebook',  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' } %>
   <% end %>
 </div>
-<
+
 <hr>
 <% end %>
 
@@ -138,3 +92,4 @@
   <%= f.text_field :title %>
   <%= f.submit "Create" %>
 <% end %> -->
+
