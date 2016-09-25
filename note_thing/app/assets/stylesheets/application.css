@@ -6,6 +6,10 @@ nav {
   text-align: right;
 }
 
+h4.titleNotebook {
+  text-align: left;
+}
+
 .notebookTitles {
   border-style: solid;
   width: 500px;
@@ -15,6 +19,10 @@ nav {
 
 .notes {
   border-style: dotted;
+}
+
+.noteHeader {
+
 }
 
 ul li {
@@ -65,7 +73,10 @@ ul li {
   width: 33%;
 }
 
-
+#deleteButton {
+  color: black;
+  text-align: center;
+}
 
 
 

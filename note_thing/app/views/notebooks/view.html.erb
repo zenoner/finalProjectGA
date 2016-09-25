@@ -1,28 +1,30 @@
 <h1>Welcome to noteWorthy</h1>
 <div class="container" class="card-panel teal lighten-1">
   <div id="inputBox">
-    <h3>Add a Notebook</h3>
+    <h3>Create a new Notebook</h3>
     <%= form_for @notebook, url: {action: "create"} do |f| %>
       <%= f.text_field :title, placeholder: 'Create new notebook' %>
       <%= f.hidden_field :user_id, :value => @user %>
       <%= f.submit "Create" %>
     <% end %>
   </div>
-
 <div class="row">
   <div class="col s12" id="flex-box-container">
   <% @notebooks.each do |notebook| %>
     <ul class="collapsible box" data-collapsible="accordion">
       <li>
-        <div class="collapsible-header"><b><%= notebook.title %></b><br><%= link_to 'Destroy Notebook',  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' } %></div>
-            <div class="collapsible-body">
+              <%= link_to ('<i class="material-icons">delete</i>').html_safe,  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' }, :id => "deleteButton" %>
+
+        <div class="collapsible-header"><h4 class="titleNotebook"><%= notebook.title %></h4><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Create new Note</a>
+        </div>
+        <div class="collapsible-body">
           <div class="row">
             <div aclass="col s12 m12">
               <% notebook.notes.each do |note| %>
               <% puts "Notes #{note.title}" %>
-              <ul class="collapsible" data-collapsible="accordion">
+              <ul class="collapsible " data-collapsible="accordion">
                 <li>
-                  <div class="collapsible-header"><%= note.title %></div>
+                  <div class="collapsible-header "><%= note.title %></div>
                   <div class="collapsible-body">
                     <p><%= note.body %></p>
                   </div>
@@ -32,21 +34,19 @@
               <% end %>
             </div>
           </div>
-          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Create new Note</a>
         </div>
       </li>
     </ul>
-    <div id="modal1" class="modal">
-   <div class="addNotes">
+<div id="modal1" class="modal">
+ <div class="addNotes">
   <b>Add a Note to this book</b>
   <%= form_for (@note), url: "/notes" do |f| %>
     <input type='hidden' name='notebook_id' value='<%= notebook.id %>'>
     <%= f.text_field :title, placeholder: 'title'  %><br>
     <%= f.text_area :body, placeholder: 'body' %><br>
-    <%= f.submit "Create" %>
-    <%= link_to 'Destroy Notebook',  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' } %>
+    <%= f.submit 'Create' %>
   <% end %>
-</div>
+ </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
@@ -90,15 +90,7 @@
 <hr>
 <% end %>
 
-<div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-    </div>
-  </div>
+
 
 
 
