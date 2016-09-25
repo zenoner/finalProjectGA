@@ -11,17 +11,20 @@
 
 <div class="row">
   <div class="col s12">
+  <% @notebooks.each do |notebook| %>
     <ul class="collapsible" data-collapsible="accordion">
       <li>
-        <div class="collapsible-header"> Notebook Titles </div>
-        <div class="collapsible-body">
+        <div class="collapsible-header"><%= notebook.title %></div>
+            <div class="collapsible-body">
           <div class="row">
-            <div class="col s12 m12">
+            <div aclass="col s12 m12">
+              <% notebook.notes.each do |note| %>
+              <% puts "Notes #{note.title}" %>
               <ul class="collapsible" data-collapsible="accordion">
                 <li>
-                  <div class="collapsible-header">Note Title 1</div>
+                  <div class="collapsible-header"><%= note.title %></div>
                   <div class="collapsible-body">
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p><%= note.body %></p>
                   </div>
                 </li>
                 <li>
@@ -31,16 +34,18 @@
                   </div>
                 </li>
               </ul>
+              <% end %>
             </div>
           </div>
         </div>
       </li>
     </ul>
+  <% end %>
   </div>
 </div>
 
   <div class="row">
-<% @notebooks.each do |notebook| %>
+  <% @notebooks.each do |notebook| %>
   <div class="notebookTitles">
     Notebook Title:
     <a class='show_notes'><b><%= notebook.title %></b></a>
@@ -55,7 +60,7 @@
       <br>
       <%= link_to 'Destroy',  note,  method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
-    <% end %>
+  <% end %>
 </div>
 <div class="addNotes">
   <b>Add a Note to this book</b>
