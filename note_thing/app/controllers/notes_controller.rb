@@ -17,4 +17,14 @@ class NotesController < ApplicationController
   def show
     @notes = Note.where(notebook_id: params[:id])
   end
+
+  def edit
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    @note.update(post_paramas)
+    redirect_to :back
+  end
 end

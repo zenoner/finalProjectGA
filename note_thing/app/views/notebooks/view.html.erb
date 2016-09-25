@@ -3,7 +3,7 @@
   <div id="inputBox">
     <h3>Create a new Notebook</h3>
     <%= form_for @notebook, url: {action: "create"} do |f| %>
-      <%= f.text_field :title, placeholder: 'Create new notebook' %>
+      <%= f.text_field :title, placeholder: 'Create new notebook', :required => 'required' %>
       <%= f.hidden_field :user_id, :value => @user %>
       <%= button_tag( :class => "#") do %>
         <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
@@ -28,8 +28,10 @@
                   <div class="collapsible-header "><h5><%= note.title %><h5></div>
                   <div class="collapsible-body">
                     <p><%= note.body %></p>
-                  </div>
+                  <a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i class="material-icons">mode_edit</i></a>
                   <%= link_to ('<i class="material-icons">not_interested</i>').html_safe,  note,  method: :delete, :id => "deleteButton" %>
+                  </div>
+
                 </li>
               </ul>
               <% end %>
@@ -52,10 +54,31 @@
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
+
+
+
+  <div id="modal2" class="modal">
+<%= form_for @note do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
+</div>
   <% end %>
   </div>
 </div>
 
+<div id="modal2" class="modal">
+<%= form_for @note do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
+</div>
 
 
 <!-- ============== -->
@@ -73,6 +96,7 @@
       <br>
       Note Body: <%= note.body %>
       <br>
+
       <%= link_to 'Destroy',  note,  method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
@@ -92,7 +116,13 @@
 <% end %>
 
 
-
+<%= form_for @note do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
 
 
 

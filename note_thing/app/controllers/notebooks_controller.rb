@@ -25,4 +25,14 @@ class NotebooksController < ApplicationController
     redirect_to :back
   end
 
+  def edit
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    @note.update(post_paramas)
+    redirect_to :back
+  end
+
 end

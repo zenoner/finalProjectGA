@@ -4,3 +4,11 @@
   <%= note.body %>
   <br><br>
 <% end %>
+
+<%= form_for @note do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
