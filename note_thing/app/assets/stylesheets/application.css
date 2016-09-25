@@ -17,6 +17,11 @@ nav {
   border-style: dotted;
 }
 
+ul li {
+    list-style-type: none;
+    padding: 16px;
+}
+
 .addNotes {
   background-color: gray;
   width: 500px;
