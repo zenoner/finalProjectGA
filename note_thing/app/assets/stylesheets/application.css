@@ -75,7 +75,8 @@ ul li {
 
 #deleteButton {
   color: black;
-  text-align: center;
+  text-align: right;
+  padding: 12px;
 }
 
 

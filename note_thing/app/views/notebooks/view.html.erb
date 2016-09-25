@@ -5,7 +5,9 @@
     <%= form_for @notebook, url: {action: "create"} do |f| %>
       <%= f.text_field :title, placeholder: 'Create new notebook' %>
       <%= f.hidden_field :user_id, :value => @user %>
-      <%= f.submit "Create" %>
+      <%= button_tag( :class => "#") do %>
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <% end %>
     <% end %>
   </div>
 <div class="row">
@@ -13,8 +15,7 @@
   <% @notebooks.each do |notebook| %>
     <ul class="collapsible box" data-collapsible="accordion">
       <li>
-              <%= link_to ('<i class="material-icons">delete</i>').html_safe,  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' }, :id => "deleteButton" %>
-
+      <%= link_to ('<i class="material-icons">delete</i>').html_safe,  notebook,  method: :delete, data: { confirm: 'Are you absolutely sure you want to delete this notebook?' }, :id => "deleteButton" %>
         <div class="collapsible-header"><h4 class="titleNotebook"><%= notebook.title %></h4><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Create new Note</a>
         </div>
         <div class="collapsible-body">
@@ -24,12 +25,12 @@
               <% puts "Notes #{note.title}" %>
               <ul class="collapsible " data-collapsible="accordion">
                 <li>
-                  <div class="collapsible-header "><%= note.title %></div>
+                  <div class="collapsible-header "><h5><%= note.title %><h5></div>
                   <div class="collapsible-body">
                     <p><%= note.body %></p>
                   </div>
+                  <%= link_to ('<i class="material-icons">not_interested</i>').html_safe,  note,  method: :delete, :id => "deleteButton" %>
                 </li>
-                <%= link_to 'Destroy Note',  note,  method: :delete, data: { confirm: 'Are you sure?' } %>
               </ul>
               <% end %>
             </div>
