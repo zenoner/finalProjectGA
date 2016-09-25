@@ -14,7 +14,7 @@
   <% @notebooks.each do |notebook| %>
     <ul class="collapsible" data-collapsible="accordion">
       <li>
-        <div class="collapsible-header"><%= notebook.title %></div>
+        <div class="collapsible-header"><%= notebook.title %><br><%= link_to 'Destroy Notebook',  notebook,  method: :delete, data: { confirm: 'Are you fucking sure?' } %></div>
             <div class="collapsible-body">
           <div class="row">
             <div aclass="col s12 m12">
@@ -31,7 +31,7 @@
               <% end %>
             </div>
           </div>
-          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Create new Note</a>
         </div>
       </li>
     </ul>
