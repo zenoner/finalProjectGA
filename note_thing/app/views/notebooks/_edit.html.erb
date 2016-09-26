@@ -1,0 +1,10 @@
+
+
+      <%= form_for (note), url: "/notes" do |f| %>
+        <input type='hidden' name='notebook_id' value=<%= notebook_id %>>
+        <%= f.text_field :title, placeholder: 'title', :required => 'required' %><br>
+        <%= f.text_area :body, placeholder: 'body', :required => 'required' %><br>
+        <%= button_tag( :class => "createButton") do %>
+            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <% end %>
+      <% end %>

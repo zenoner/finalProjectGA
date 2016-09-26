@@ -1,6 +1,8 @@
 class NotebooksController < ApplicationController
   def view
-    @user = current_user.id
+    if current_user
+      @user = current_user.id
+    end
     @notes = Note.all
     @note = Note.new
     @notebooks = Notebook.where(:user_id => @user)
