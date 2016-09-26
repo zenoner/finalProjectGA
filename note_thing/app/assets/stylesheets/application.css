@@ -21,6 +21,7 @@ nav {
 
 h4.titleNotebook {
   text-align: left;
+  padding-top: 5px;
 }
 
 .notebookTitles {
@@ -32,6 +33,24 @@ h4.titleNotebook {
 
 .notes {
   border-style: dotted;
+}
+
+.noteBox {
+
+}
+
+div.collapsible-header{
+  border-radius: 10px;
+  position: relative
+}
+
+div.collapsible-header h5 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 .noteHeader {
