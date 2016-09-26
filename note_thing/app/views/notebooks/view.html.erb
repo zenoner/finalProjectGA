@@ -16,7 +16,7 @@
     <ul class="collapsible box #e0e0e0 grey lighten-2" data-collapsible="accordion">
       <li>
       <%= link_to ('<i class="material-icons">delete</i>').html_safe,  notebook,  method: :delete, data: { confirm: 'Are you absolutely sure you want to delete this notebook?' }, :id => "deleteButton" %>
-        <div class="collapsible-header"><h4 class="titleNotebook"><%= notebook.title %></h4><a class="waves-effect waves-light btn modal-trigger noteBox" href="#modal1">Create new Note</a>
+        <div class="collapsible-header #e0e0e0 grey lighten-2"><h4 class="titleNotebook"><%= notebook.title %></h4><a class="waves-effect waves-light btn modal-trigger noteBox" href="#modal1">Create new Note</a>
         </div>
         <div class="collapsible-body">
           <div class="row">
@@ -25,9 +25,9 @@
               <% puts "Notes #{note.title}" %>
               <ul class="collapsible " data-collapsible="accordion">
                 <li>
-                  <div class="collapsible-header "><h5><%= note.title %><h5></div>
+                  <div class="collapsible-header #e0e0e0 grey lighten-2"><h5><%= note.title %><h5></div>
                   <div class="collapsible-body">
-                    <p><%= note.body %></p>
+                    <p ><%= note.body %></p>
                   <a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i class="material-icons">mode_edit</i></a>
                   <%= link_to ('<i class="material-icons">not_interested</i>').html_safe,  note,  method: :delete, :id => "deleteButton" %>
                   </div>
@@ -45,7 +45,7 @@
   <b>Add a Note to this book</b>
   <%= form_for (@note), url: "/notes" do |f| %>
     <input type='hidden' name='notebook_id' value='<%= notebook.id %>'>
-    <%= f.text_field :title, placeholder: 'title', :required => 'required'  %><br>
+    <%= f.text_field :title, placeholder: 'title', :required => 'required' %><br>
     <%= f.text_area :body, placeholder: 'body', :required => 'required' %><br>
     <%= button_tag( :class => "createButton") do %>
         <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
