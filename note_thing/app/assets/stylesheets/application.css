@@ -125,7 +125,13 @@ ul li {
 #deleteButton {
   color: black;
   text-align: right;
-  padding: 12px;
+  padding: 53px;
+}
+
+#deleteButton2 {
+  color: black;
+  text-align: right;
+  padding: 40px;
 }
 
 .seiji{
@@ -151,4 +157,8 @@ a {
 
 strong {
   margin-right: 10px;
+}
+
+i {
+  text-align: center;
 }
