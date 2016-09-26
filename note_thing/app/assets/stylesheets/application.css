@@ -7,7 +7,9 @@
   display: none;
 }
 #signOUt {
-  margin-right: 20px;
+  margin-right: 19px;
+  margin-left: -5px;
+  font-size: 26px;
 }
 
 .row {
@@ -130,8 +132,23 @@ ul li {
   border: none;
 }
 
+h2{
+  margin-left: 50px;
+}
 
+.new_user {
+  width: 50%;
+  margin-left: 50px;
+}
 
+.waves-effect {
+  margin-left: 2px;
+}
 
+a {
+  margin-left: 50px;
+}
 
-
+strong {
+  margin-right: 10px;
+}
